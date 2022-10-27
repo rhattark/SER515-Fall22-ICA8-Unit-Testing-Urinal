@@ -20,20 +20,17 @@ class UrinalsTest {
         testCount = 0;
     }
 
-    @AfterEach
-    void postTestIndividual() {
-        System.out.println("====== Rhishabh Hattarki == TEST " + (++testCount) + " EXECUTED =======");
-    }
-
     @Test
     void isValidUrinal_validString_noOnes() {
         String noOnes = "0000";
         assertTrue(urinals.isValidUrinal(noOnes));
+        System.out.println("====== Rhishabh Hattarki == TEST ONE EXECUTED =======");
     }
 
     @Test
     void isValidUrinal_invalidString_noZeros() {
         String noZeros = "1111";
         assertFalse(urinals.isValidUrinal(noZeros));
+        System.out.println("====== Rhishabh Hattarki == TEST TWO EXECUTED =======");
     }
 }
