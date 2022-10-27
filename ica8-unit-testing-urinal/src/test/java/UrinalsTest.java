@@ -68,4 +68,11 @@ class UrinalsTest {
         assertTrue(urinals.isValidUrinal(onlyOne));
         System.out.println("====== Rhishabh Hattarki == TEST SEVEN EXECUTED =======");
     }
+
+    @Test
+    void isValidUrinal_validString_onlyZero() {
+        String onlyZero = "0";
+        assertTrue(urinals.isValidUrinal(onlyZero));
+        System.out.println("====== Rhishabh Hattarki == TEST EIGHT EXECUTED =======");
+    }
 }
