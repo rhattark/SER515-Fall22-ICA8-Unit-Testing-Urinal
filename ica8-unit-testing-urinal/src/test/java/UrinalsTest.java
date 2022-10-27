@@ -47,4 +47,11 @@ class UrinalsTest {
         assertFalse(urinals.isValidUrinal(someOnes));
         System.out.println("====== Rhishabh Hattarki == TEST FOUR EXECUTED =======");
     }
+
+    @Test
+    void isValidUrinal_invalidString_Empty() {
+        String empty = "";
+        assertFalse(urinals.isValidUrinal(empty));
+        System.out.println("====== Rhishabh Hattarki == TEST FIVE EXECUTED =======");
+    }
 }
