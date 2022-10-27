@@ -31,7 +31,7 @@ class UrinalsTest {
     void isValidUrinal_validString_someOnes() {
         String someOnes = "0101";
         assertTrue(urinals.isValidUrinal(someOnes));
-        System.out.println("====== Rhishabh Hattarki == TEST ONE EXECUTED =======");
+        System.out.println("====== Rhishabh Hattarki == TEST TWO EXECUTED =======");
     }
 
     @Test
@@ -39,5 +39,12 @@ class UrinalsTest {
         String noZeros = "1111";
         assertFalse(urinals.isValidUrinal(noZeros));
         System.out.println("====== Rhishabh Hattarki == TEST THREE EXECUTED =======");
+    }
+
+    @Test
+    void isValidUrinal_invalidString_someOnes() {
+        String someOnes = "0110";
+        assertFalse(urinals.isValidUrinal(someOnes));
+        System.out.println("====== Rhishabh Hattarki == TEST FOUR EXECUTED =======");
     }
 }
