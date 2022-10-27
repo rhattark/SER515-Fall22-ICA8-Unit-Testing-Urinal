@@ -6,6 +6,26 @@
  * @author Rhishabh Suhas Hattarki - rhattark
  */
 public class Urinals {
+
+    public boolean isValidUrinal(String urinal) {
+        int uLen = urinal.length();
+
+        if (uLen < 1 || uLen > 20) {
+            return false;
+        }
+
+        for (int i = 1; i < uLen; i++) {
+            char cur = urinal.charAt(i);
+            char prev = urinal.charAt(i-1);
+
+            if (cur == '1' && prev == '1') {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
     public static void main(String[] args) {
         System.out.println("basic structure");
     }
