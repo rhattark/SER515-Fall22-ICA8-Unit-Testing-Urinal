@@ -30,4 +30,10 @@ class UrinalsTest {
         String noOnes = "0000";
         assertTrue(urinals.isValidUrinal(noOnes));
     }
+
+    @Test
+    void isValidUrinal_invalidString_noZeros() {
+        String noZeros = "1111";
+        assertFalse(urinals.isValidUrinal(noZeros));
+    }
 }
