@@ -28,9 +28,16 @@ class UrinalsTest {
     }
 
     @Test
+    void isValidUrinal_validString_someOnes() {
+        String someOnes = "0101";
+        assertTrue(urinals.isValidUrinal(someOnes));
+        System.out.println("====== Rhishabh Hattarki == TEST ONE EXECUTED =======");
+    }
+
+    @Test
     void isValidUrinal_invalidString_noZeros() {
         String noZeros = "1111";
         assertFalse(urinals.isValidUrinal(noZeros));
-        System.out.println("====== Rhishabh Hattarki == TEST TWO EXECUTED =======");
+        System.out.println("====== Rhishabh Hattarki == TEST THREE EXECUTED =======");
     }
 }
