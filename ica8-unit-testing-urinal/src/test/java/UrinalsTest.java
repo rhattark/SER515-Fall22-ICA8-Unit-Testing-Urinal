@@ -61,4 +61,11 @@ class UrinalsTest {
         assertFalse(urinals.isValidUrinal(tooLong));
         System.out.println("====== Rhishabh Hattarki == TEST SIX EXECUTED =======");
     }
+
+    @Test
+    void isValidUrinal_validString_onlyOne() {
+        String onlyOne = "1";
+        assertTrue(urinals.isValidUrinal(onlyOne));
+        System.out.println("====== Rhishabh Hattarki == TEST SEVEN EXECUTED =======");
+    }
 }
