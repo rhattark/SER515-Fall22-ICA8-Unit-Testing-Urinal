@@ -83,11 +83,29 @@ public class Urinals {
     }
 
     public void writeResultsTo(String path, List<Integer> results) throws IOException {
+        path = confirmPath(path);
+
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(path))) {
             for (int result : results) {
                 writer.append(String.valueOf(result) + "\n");
             }
         }
+    }
+
+    private String confirmPath(String path) {
+        File file = new File(path);
+        int count = 1;
+        String[] split = path.split("\\.");
+        String fileName = split[0];
+        String extension = split[1];
+
+        while (file.exists()) {
+            path = fileName + count + "." + extension;
+            file = new File(path);
+            count++;
+        }
+
+        return path;
     }
 
     public void deleteContentsOfDirectory(File directory) {
