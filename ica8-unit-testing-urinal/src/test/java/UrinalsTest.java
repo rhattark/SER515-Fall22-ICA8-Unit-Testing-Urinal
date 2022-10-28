@@ -116,5 +116,11 @@ class UrinalsTest {
         assertEquals(1, urinals.countFreeUrinals(three0sAfter01));
         System.out.println("====== Rhishabh Hattarki == TEST FOURTEEN EXECUTED =======");
     }
-    
+
+    @Test
+    void countFreeUrinals_invalid_0One1() {
+        String zero11 = "011";
+        assertEquals(-1, urinals.countFreeUrinals(zero11));
+        System.out.println("====== Rhishabh Hattarki == TEST FIFTEEN EXECUTED =======");
+    }
 }
