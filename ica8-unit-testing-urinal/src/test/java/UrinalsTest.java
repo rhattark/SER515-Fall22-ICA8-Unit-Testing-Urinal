@@ -226,4 +226,19 @@ class UrinalsTest {
         System.out.println("====== Rhishabh Hattarki == TEST TWENTY SIX EXECUTED =======");
     }
 
+    @Test
+    void writeResultsTo_MultipleFilesAlreadyExists() throws IOException {
+        File directory = new File("src/test/resources/output");
+        urinals.deleteContentsOfDirectory(directory);
+        urinals.writeResultsTo("src/test/resources/output/rule.txt", new ArrayList<>());
+        urinals.writeResultsTo("src/test/resources/output/rule.txt", new ArrayList<>());
+        urinals.writeResultsTo("src/test/resources/output/rule.txt", new ArrayList<>());
+        List<Integer> urinalList = List.of(1, 2, 3);
+        urinals.writeResultsTo("src/test/resources/output/rule.txt", urinalList);
+        List<String> resultsRead = urinals.readUrinalsFrom("src/test/resources/output/rule3.txt");
+        List<String> expectedResultsRead = List.of("1", "2", "3");
+        assertIterableEquals(expectedResultsRead, resultsRead);
+        System.out.println("====== Rhishabh Hattarki == TEST TWENTY SIX EXECUTED =======");
+    }
+
 }
