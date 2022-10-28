@@ -87,7 +87,8 @@ public class Urinals {
 
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(path))) {
             for (int result : results) {
-                writer.append(String.valueOf(result) + "\n");
+                String nextLine = result + "\n";
+                writer.append(nextLine);
             }
         }
     }
@@ -116,7 +117,9 @@ public class Urinals {
                 if (file.isDirectory()) {
                     deleteContentsOfDirectory(file);
                 }
-                file.delete();
+                if (!file.delete()) {
+                    break;
+                }
             }
         }
     }
