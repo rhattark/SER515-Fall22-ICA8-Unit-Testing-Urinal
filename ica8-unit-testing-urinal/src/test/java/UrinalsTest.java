@@ -75,4 +75,11 @@ class UrinalsTest {
         assertTrue(urinals.isValidUrinal(onlyZero));
         System.out.println("====== Rhishabh Hattarki == TEST EIGHT EXECUTED =======");
     }
+
+    @Test
+    void isValidUrinal_invalidString_randomCharacters() {
+        String random = "adfewf";
+        assertFalse(urinals.isValidUrinal(random));
+        System.out.println("====== Rhishabh Hattarki == TEST NINE EXECUTED =======");
+    }
 }

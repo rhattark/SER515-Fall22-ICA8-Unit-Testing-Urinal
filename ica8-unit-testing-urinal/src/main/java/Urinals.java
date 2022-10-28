@@ -14,9 +14,17 @@ public class Urinals {
             return false;
         }
 
+        if (!(urinal.charAt(0) == '0' || urinal.charAt(0) == '1')) {
+            return false;
+        }
+
         for (int i = 1; i < uLen; i++) {
             char cur = urinal.charAt(i);
             char prev = urinal.charAt(i-1);
+
+            if (!(cur == '0' || cur == '1')) {
+                return false;
+            }
 
             if (cur == '1' && prev == '1') {
                 return false;
