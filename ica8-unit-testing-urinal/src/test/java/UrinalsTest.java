@@ -1,4 +1,3 @@
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -81,5 +80,12 @@ class UrinalsTest {
         String random = "adfewf";
         assertFalse(urinals.isValidUrinal(random));
         System.out.println("====== Rhishabh Hattarki == TEST NINE EXECUTED =======");
+    }
+
+    @Test
+    void countFreeUrinals_5Zeros() {
+        String fiveZeros = "00000";
+        assertEquals(3, urinals.countFreeUrinals(fiveZeros));
+        System.out.println("====== Rhishabh Hattarki == TEST TEN EXECUTED =======");
     }
 }

@@ -34,6 +34,31 @@ public class Urinals {
         return true;
     }
 
+    public int countFreeUrinals(String urinal) {
+        if (!isValidUrinal(urinal)) {
+            return -1;
+        }
+
+        int count = 0;
+        char[] urinals = urinal.toCharArray();
+        int uLen = urinals.length;
+
+        for (int i = 0; i < uLen; i++) {
+            char cur = urinals[i];
+
+            if (cur == '1' ||
+                    (i > 0 && urinals[i-1] == '1') ||
+                    (i < uLen - 1 && urinals[i+1] == '1')) {
+                continue;
+            }
+
+            urinals[i] = '1';
+            count++;
+        }
+
+        return count;
+    }
+
     public static void main(String[] args) {
         System.out.println("basic structure");
     }
