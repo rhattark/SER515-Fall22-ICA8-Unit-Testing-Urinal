@@ -241,4 +241,16 @@ class UrinalsTest {
         System.out.println("====== Rhishabh Hattarki == TEST TWENTY SEVEN EXECUTED =======");
     }
 
+    @Test
+    void writeResultsTo_BadFile() throws IOException {
+        File directory = new File("src/test/resources/output/");
+        urinals.deleteContentsOfDirectory(directory);
+        List<Integer> urinalList = List.of(1, 2, 3);
+        assertThrows(IOException.class,
+                () -> urinals.writeResultsTo("src/test/resources/output/output/rule.txt",
+                        urinalList));
+
+        System.out.println("====== Rhishabh Hattarki == TEST TWENTY EIGHT EXECUTED =======");
+    }
+
 }
