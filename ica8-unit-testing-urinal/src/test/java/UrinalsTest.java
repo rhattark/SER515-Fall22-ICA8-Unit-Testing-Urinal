@@ -171,4 +171,12 @@ class UrinalsTest {
         System.out.println("====== Rhishabh Hattarki == TEST TWENTY ONE EXECUTED =======");
     }
 
+    @Test
+    void readUrinalsFrom_readsCorrectly_endsWithMinus1_withExtra() throws IOException {
+        String filePath = "src/test/resources/input/urinal-1WithExtra.dat";
+        List<String> urinalList = List.of("10001", "1001");
+        assertEquals(urinalList, urinals.readUrinalsFrom(filePath));
+        System.out.println("====== Rhishabh Hattarki == TEST TWENTY TWO EXECUTED =======");
+    }
+
 }
