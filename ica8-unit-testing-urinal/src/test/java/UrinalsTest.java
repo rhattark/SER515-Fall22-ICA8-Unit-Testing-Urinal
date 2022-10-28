@@ -3,6 +3,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -148,12 +149,18 @@ class UrinalsTest {
     }
 
     @Test
-    void readUrinalsFrom_fileDoesNotExist() throws IOException {
+    void readUrinalsFrom_fileDoesNotExist() {
         String fileName = "urinal.dat";
-        assertThrows(IOException.class, () -> {
-            urinals.readUrinalsFrom(fileName);
-        });
+        assertThrows(IOException.class, () -> urinals.readUrinalsFrom(fileName));
         System.out.println("====== Rhishabh Hattarki == TEST NINETEEN EXECUTED =======");
+    }
+
+    @Test
+    void readUrinalsFrom_readsCorrectly() throws IOException {
+        String filePath = "src/test/resources/input/urinal.dat";
+        List<String> urinalList = List.of("10001", "1001");
+        assertEquals(urinalList, urinals.readUrinalsFrom(filePath));
+        System.out.println("====== Rhishabh Hattarki == TEST TWENTY EXECUTED =======");
     }
 
 }

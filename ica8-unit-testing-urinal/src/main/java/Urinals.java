@@ -66,7 +66,7 @@ public class Urinals {
     public List<String> readUrinalsFrom(String path) throws IOException {
         List<String> urinalList = new ArrayList<>();
 
-        try(BufferedReader reader = new BufferedReader(new FileReader(path));) {
+        try(BufferedReader reader = new BufferedReader(new FileReader(path))) {
             String line = reader.readLine();
 
             while (line != null) {
