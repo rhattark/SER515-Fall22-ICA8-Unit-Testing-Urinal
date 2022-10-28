@@ -121,6 +121,18 @@ public class Urinals {
         }
     }
 
+    public void readCountAndWrite(String inputPath, String outputPath) throws IOException {
+        List<String> urinals = readUrinalsFrom(inputPath);
+        List<Integer> allFreeUrinals = new ArrayList<>();
+
+        for (String urinalRow : urinals) {
+            int freeUrinals = countFreeUrinals(urinalRow);
+            allFreeUrinals.add(freeUrinals);
+        }
+
+        writeResultsTo(outputPath, allFreeUrinals);
+    }
+
     public static void main(String[] args) {
         System.out.println("basic structure");
     }

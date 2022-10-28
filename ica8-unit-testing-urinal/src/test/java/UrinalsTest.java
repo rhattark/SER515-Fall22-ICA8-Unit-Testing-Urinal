@@ -242,15 +242,25 @@ class UrinalsTest {
     }
 
     @Test
-    void writeResultsTo_BadFile() throws IOException {
+    void writeResultsTo_BadFile() {
         File directory = new File("src/test/resources/output/");
         urinals.deleteContentsOfDirectory(directory);
         List<Integer> urinalList = List.of(1, 2, 3);
         assertThrows(IOException.class,
                 () -> urinals.writeResultsTo("src/test/resources/output/output/rule.txt",
                         urinalList));
-
         System.out.println("====== Rhishabh Hattarki == TEST TWENTY EIGHT EXECUTED =======");
+    }
+
+    @Test
+    void readCountAndWrite() throws IOException {
+        File directory = new File("src/test/resources/output/");
+        urinals.deleteContentsOfDirectory(directory);
+        urinals.readCountAndWrite("src/test/resources/input/urinal.dat",
+                "src/test/resources/output/rule.txt");
+        List<String> resultList = urinals.readUrinalsFrom("src/test/resources/output/rule.txt");
+        assertIterableEquals(List.of("1", "0"), resultList);
+        System.out.println("====== Rhishabh Hattarki == TEST TWENTY NINE EXECUTED =======");
     }
 
 }
