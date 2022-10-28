@@ -1,3 +1,7 @@
+import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * This class is used to track the urinals that are occupied.
  * Main goal is to calculate the number of vacant urinals considering the
@@ -57,6 +61,25 @@ public class Urinals {
         }
 
         return count;
+    }
+
+    public List<String> readUrinalsFrom(String path) throws IOException {
+        List<String> urinalList = new ArrayList<>();
+
+        try(BufferedReader reader = new BufferedReader(new FileReader(path));) {
+            String line = reader.readLine();
+
+            while (line != null) {
+                if (line.equals("-1")) {
+                    break;
+                }
+
+                urinalList.add(line);
+                line = reader.readLine();
+            }
+        }
+
+        return urinalList;
     }
 
     public static void main(String[] args) {

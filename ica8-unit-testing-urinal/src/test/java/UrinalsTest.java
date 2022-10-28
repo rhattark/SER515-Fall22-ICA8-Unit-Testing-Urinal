@@ -2,6 +2,8 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.io.IOException;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class UrinalsTest {
@@ -144,4 +146,14 @@ class UrinalsTest {
         assertEquals(0, urinals.countFreeUrinals(alternate));
         System.out.println("====== Rhishabh Hattarki == TEST EIGHTEEN EXECUTED =======");
     }
+
+    @Test
+    void readUrinalsFrom_fileDoesNotExist() throws IOException {
+        String fileName = "urinal.dat";
+        assertThrows(IOException.class, () -> {
+            urinals.readUrinalsFrom(fileName);
+        });
+        System.out.println("====== Rhishabh Hattarki == TEST NINETEEN EXECUTED =======");
+    }
+
 }
