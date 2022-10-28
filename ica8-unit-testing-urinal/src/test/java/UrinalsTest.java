@@ -238,7 +238,7 @@ class UrinalsTest {
         List<String> resultsRead = urinals.readUrinalsFrom("src/test/resources/output/rule3.txt");
         List<String> expectedResultsRead = List.of("1", "2", "3");
         assertIterableEquals(expectedResultsRead, resultsRead);
-        System.out.println("====== Rhishabh Hattarki == TEST TWENTY SIX EXECUTED =======");
+        System.out.println("====== Rhishabh Hattarki == TEST TWENTY SEVEN EXECUTED =======");
     }
 
 }
