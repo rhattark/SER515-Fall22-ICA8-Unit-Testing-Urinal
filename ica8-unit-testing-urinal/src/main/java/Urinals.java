@@ -201,7 +201,11 @@ public class Urinals {
      *
      * @param args arguments passed to main
      */
-    public static void main(String[] args) {
-        System.out.println("basic structure");
+    public static void main(String[] args) throws IOException {
+        String inputPath = "src/main/resources/input/urinal.dat";
+        String outputPath = "src/main/resources/output/rule.txt";
+        Urinals urinals = new Urinals();
+
+        urinals.readCountAndWrite(inputPath, outputPath);
     }
 }
