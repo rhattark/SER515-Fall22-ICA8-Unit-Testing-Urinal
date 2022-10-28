@@ -82,6 +82,27 @@ public class Urinals {
         return urinalList;
     }
 
+    public void writeResultsTo(String path, List<Integer> results) throws IOException {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(path))) {
+            for (int result : results) {
+                writer.append(String.valueOf(result) + "\n");
+            }
+        }
+    }
+
+    public void deleteContentsOfDirectory(File directory) {
+        File[] filesInDirectory = directory.listFiles();
+
+        if (filesInDirectory != null) {
+            for (File file : filesInDirectory) {
+                if (file.isDirectory()) {
+                    deleteContentsOfDirectory(file);
+                }
+                file.delete();
+            }
+        }
+    }
+
     public static void main(String[] args) {
         System.out.println("basic structure");
     }

@@ -2,6 +2,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -160,7 +161,7 @@ class UrinalsTest {
     void readUrinalsFrom_readsCorrectly() throws IOException {
         String filePath = "src/test/resources/input/urinal.dat";
         List<String> urinalList = List.of("10001", "1001");
-        assertEquals(urinalList, urinals.readUrinalsFrom(filePath));
+        assertIterableEquals(urinalList, urinals.readUrinalsFrom(filePath));
         System.out.println("====== Rhishabh Hattarki == TEST TWENTY EXECUTED =======");
     }
 
@@ -168,7 +169,7 @@ class UrinalsTest {
     void readUrinalsFrom_readsCorrectly_endsWithMinus1() throws IOException {
         String filePath = "src/test/resources/input/urinal-1.dat";
         List<String> urinalList = List.of("10001", "1001");
-        assertEquals(urinalList, urinals.readUrinalsFrom(filePath));
+        assertIterableEquals(urinalList, urinals.readUrinalsFrom(filePath));
         System.out.println("====== Rhishabh Hattarki == TEST TWENTY ONE EXECUTED =======");
     }
 
@@ -176,7 +177,7 @@ class UrinalsTest {
     void readUrinalsFrom_readsCorrectly_endsWithMinus1_withExtra() throws IOException {
         String filePath = "src/test/resources/input/urinal-1WithExtra.dat";
         List<String> urinalList = List.of("10001", "1001");
-        assertEquals(urinalList, urinals.readUrinalsFrom(filePath));
+        assertIterableEquals(urinalList, urinals.readUrinalsFrom(filePath));
         System.out.println("====== Rhishabh Hattarki == TEST TWENTY TWO EXECUTED =======");
     }
 
@@ -184,8 +185,20 @@ class UrinalsTest {
     void readUrinalsFrom_readsCorrectly_empty() throws IOException {
         String filePath = "src/test/resources/input/urinal-empty.dat";
         List<String> urinalList = new ArrayList<>();
-        assertEquals(urinalList, urinals.readUrinalsFrom(filePath));
+        assertIterableEquals(urinalList, urinals.readUrinalsFrom(filePath));
         System.out.println("====== Rhishabh Hattarki == TEST TWENTY THREE EXECUTED =======");
+    }
+
+    @Test
+    void writeResultsTo_twoNumbers() throws IOException {
+        File directory = new File("src/test/resources/output");
+        urinals.deleteContentsOfDirectory(directory);
+        List<Integer> urinalList = List.of(1, 3);
+        urinals.writeResultsTo("src/test/resources/output/rule.txt", urinalList);
+        List<String> resultsRead = urinals.readUrinalsFrom("src/test/resources/output/rule.txt");
+        List<String> expectedResultsRead = List.of("1", "3");
+        assertIterableEquals(expectedResultsRead, resultsRead);
+        System.out.println("====== Rhishabh Hattarki == TEST TWENTY FOUR EXECUTED =======");
     }
 
 }
