@@ -9,6 +9,11 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * All the unit tests for the Urinals Class.
+ *
+ * @author Rhishabh Suhas Hattarki - rhattark
+ */
 class UrinalsTest {
 
     Urinals urinals;
