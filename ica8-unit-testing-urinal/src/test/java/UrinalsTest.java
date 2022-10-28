@@ -88,4 +88,12 @@ class UrinalsTest {
         assertEquals(3, urinals.countFreeUrinals(fiveZeros));
         System.out.println("====== Rhishabh Hattarki == TEST TEN EXECUTED =======");
     }
+
+    @Test
+    void countFreeUrinals_4Zeros() {
+        String fourZeros = "0000";
+        assertEquals(2, urinals.countFreeUrinals(fourZeros));
+        System.out.println("====== Rhishabh Hattarki == TEST ELEVEN EXECUTED =======");
+    }
+    
 }
