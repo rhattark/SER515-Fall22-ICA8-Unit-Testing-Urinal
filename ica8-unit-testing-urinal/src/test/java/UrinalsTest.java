@@ -3,6 +3,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -177,6 +178,14 @@ class UrinalsTest {
         List<String> urinalList = List.of("10001", "1001");
         assertEquals(urinalList, urinals.readUrinalsFrom(filePath));
         System.out.println("====== Rhishabh Hattarki == TEST TWENTY TWO EXECUTED =======");
+    }
+
+    @Test
+    void readUrinalsFrom_readsCorrectly_empty() throws IOException {
+        String filePath = "src/test/resources/input/urinal-empty.dat";
+        List<String> urinalList = new ArrayList<>();
+        assertEquals(urinalList, urinals.readUrinalsFrom(filePath));
+        System.out.println("====== Rhishabh Hattarki == TEST TWENTY THREE EXECUTED =======");
     }
 
 }
