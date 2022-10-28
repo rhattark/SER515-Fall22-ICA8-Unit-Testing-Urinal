@@ -1,0 +1,5 @@
+Name: Rhishabh Suhas Hattarki
+Assurite ID: rhattark
+GitHub link: https://github.com/rhattark/SER515-Fall22-ICA8-Unit-Testing-Urinal
+
+Please refer README for more info.
